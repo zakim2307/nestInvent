@@ -4,12 +4,12 @@ import path from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { configService } from './config/config.service';
-// import { DatabaseModule } from './database/database.module';
-// import { InventoryModule } from './inventory/inventory.module';
+import { NamesModule } from './names/names.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    NamesModule
   ],
   controllers: [AppController],
   providers: [AppService],
